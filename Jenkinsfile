@@ -13,7 +13,7 @@ pipeline
         {
             steps
             {
-                echo "Test karke dekhte hain kya tatti banaya hai is developer ne"
+                echo "Testing the React App developed by hafizaatifkamal & Team"
             }
         }
 
@@ -21,7 +21,7 @@ pipeline
         {
             steps
             {
-                echo "Building that tatti docker image"
+                echo "Building the React App developed by hafizaatifkamal & Team"
 
                 sh "docker build -t hafizaatifkamal/nodeapp:16-alpine3.12 ."
             }
@@ -42,7 +42,7 @@ pipeline
         {
             steps
             {
-                echo "Building that tatti docker image"
+                echo "Pushing the React App developed by hafizaatifkamal & Team"
 
                 sh "docker push hafizaatifkamal/nodeapp:16-alpine3.12"
             }
@@ -52,7 +52,7 @@ pipeline
         {
             steps
             {
-                echo "Running that tatti docker image"
+                echo "Running the React App developed by hafizaatifkamal & Team"
 
                 sh "docker --pull run hafizaatifkamal/nodeapp:16-alpine3.12"
 
