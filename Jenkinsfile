@@ -54,9 +54,9 @@ pipeline
             {
                 echo "Running the React App developed by hafizaatifkamal & Team"
 
-                sh "docker --pull run hafizaatifkamal/nodeapp:16-alpine3.12"
+                sh "docker pull hafizaatifkamal/nodeapp:16-alpine3.12"
 
-                //sh "docker run hafizaatifkamal/nodeapp:16-alpine3.12 "
+                sh "docker run hafizaatifkamal/nodeapp:16-alpine3.12 "
             }
         }
     }
