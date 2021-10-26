@@ -1,21 +1,40 @@
+// pipeline
+// {
+//     agent
+//     {
+//         docker
+//         {
+//             image "node:16-alpine3.12"
+//             args "-p 3000:3000"
+//         }
+//     }
+    
+//     stages
+//     {
+//         stage("Build")
+//         {
+//             steps
+//             {
+//                 sh "npm install"
+//             }
+//         }
+//     }
+// }
+
 pipeline
 {
-    agent
+    agent 
     {
-        docker
-        {
-            image "node:16-alpine3.12"
-            args "-p 3000:3000"
-        }
+        dockerfile true
     }
-    
+
     stages
     {
-        stage("Build")
+        stage('Test')
         {
             steps
             {
-                sh "npm install"
+                sh 'node:16-alpine3.12'
             }
         }
     }
