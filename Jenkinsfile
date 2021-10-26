@@ -1,26 +1,3 @@
-// pipeline
-// {
-//     agent
-//     {
-//         docker
-//         {
-//             image "node:16-alpine3.12"
-//             args "-p 3000:3000"
-//         }
-//     }
-    
-//     stages
-//     {
-//         stage("Build")
-//         {
-//             steps
-//             {
-//                 sh "npm install"
-//             }
-//         }
-//     }
-// }
-
 pipeline
 {
     agent any
@@ -49,6 +26,17 @@ pipeline
                 sh "docker build -t music-app-ui/nodeapp:16-alpine3.12 ."
             }
         }
+
+        stage('Login')
+        {
+
+			steps
+            {
+                echo "Login Succesfully!"
+
+				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+			}
+		}
 
         stage('Push')
         {
