@@ -46,7 +46,7 @@ pipeline
             {
                 echo "Building that tatti docker image"
 
-                sh "docker build -t music-app-ui/nodeapp:16-alpine3.12"
+                sh "docker build -t music-app-ui/nodeapp:16-alpine3.12 ."
             }
         }
 
