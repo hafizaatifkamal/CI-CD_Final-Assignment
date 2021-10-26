@@ -24,9 +24,11 @@
 pipeline
 {
     agent any
-    // {
-    //     dockerfile true
-    // }
+
+    environment
+    {
+		DOCKERHUB_CREDENTIALS=credentials('hafizaatifkamal')
+	}
 
     stages
     {
@@ -35,7 +37,26 @@ pipeline
             steps
             {
                 echo "Test karke dekhte hain kya tatti banaya hai is developer ne"
-                //sh 'node:16-alpine3.12'
+            }
+        }
+
+        stage('Build')
+        {
+            steps
+            {
+                echo "Building that tatti docker image"
+
+                sh "docker build -t music-app-ui/nodeapp:16-alpine3.12"
+            }
+        }
+
+        stage('Push')
+        {
+            steps
+            {
+                echo "Building that tatti docker image"
+
+                sh "docker push music-app-ui/nodeapp:16-alpine3.12"
             }
         }
     }
