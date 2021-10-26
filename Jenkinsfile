@@ -23,10 +23,10 @@
 
 pipeline
 {
-    agent 
-    {
-        dockerfile true
-    }
+    agent any
+    // {
+    //     dockerfile true
+    // }
 
     stages
     {
@@ -34,7 +34,8 @@ pipeline
         {
             steps
             {
-                sh 'node:16-alpine3.12'
+                echo "Test karke dekhte hain kya tatti banaya hai is developer ne"
+                //sh 'node:16-alpine3.12'
             }
         }
     }
