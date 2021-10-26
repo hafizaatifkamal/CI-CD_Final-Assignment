@@ -27,7 +27,7 @@ pipeline
 
     environment
     {
-		DOCKERHUB_CREDENTIALS=credentials('hafizaatifkamal')
+		DOCKERHUB_CREDENTIALS=credentials('AtifKamal')
 	}
 
     stages
