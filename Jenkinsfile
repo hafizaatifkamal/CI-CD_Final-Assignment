@@ -47,5 +47,17 @@ pipeline
                 sh "docker push hafizaatifkamal/nodeapp:16-alpine3.12"
             }
         }
+
+        stage('Run')
+        {
+            steps
+            {
+                echo "Running that tatti docker image"
+
+                sh "docker --pull run hafizaatifkamal/nodeapp:16-alpine3.12"
+
+                //sh "docker run hafizaatifkamal/nodeapp:16-alpine3.12 "
+            }
+        }
     }
 }
