@@ -25,10 +25,10 @@ pipeline
 {
     agent any
 
-    environment
-    {
-		DOCKERHUB_CREDENTIALS=credentials('AtifKamal')
-	}
+    // environment
+    // {
+	// 	DOCKERHUB_CREDENTIALS=credentials('AtifKamal')
+	// }
 
     stages
     {
